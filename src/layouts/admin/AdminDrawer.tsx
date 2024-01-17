@@ -9,7 +9,6 @@ interface Props {
 }
 const AdminDrawer = ({ isFull, setIsFull }: Props) => {
   const router = useRouter();
-  console.log(router);
 
   return (
     <div
@@ -74,6 +73,7 @@ const AdminDrawer = ({ isFull, setIsFull }: Props) => {
               </Fragment>
             ) : (
               <div
+                key={i}
                 onClick={() => router?.push(item?.route)}
                 className={`${
                   item?.route === router?.asPath
