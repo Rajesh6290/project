@@ -36,22 +36,23 @@ const AdminDrawer = ({ isFull, setIsFull }: Props) => {
         <div className="w-full h-[90%] overflow-y-auto scroll-hide flex flex-col gap-2 pb-3 px-4">
           {UseMenuItems?.map((item: any, i: number) =>
             item?.submenus ? (
-              <Collapse
-                isFull={isFull}
-                title={item?.title}
-                icon={item?.icon}
-                data={item}
-              >
-                <div
-                  className={`flex w-full flex-col   py-1
+              <Fragment key={i}>
+                <Collapse
+                  isFull={isFull}
+                  title={item?.title}
+                  icon={item?.icon}
+                  data={item}
+                >
+                  <div
+                    className={`flex w-full flex-col   py-1
                 ${isFull ? `px-2 gap-3` : `px-4 gap-1`}
                 `}
-                >
-                  {item?.submenus?.map((subItem: any, i: number) => (
-                    <div
-                      key={i}
-                      onClick={() => router?.push(subItem?.route)}
-                      className={`flex relative items-center font-medium cursor-pointer gap-4 
+                  >
+                    {item?.submenus?.map((subItem: any, i: number) => (
+                      <div
+                        key={i}
+                        onClick={() => router?.push(subItem?.route)}
+                        className={`flex relative items-center font-medium cursor-pointer gap-4 
                       ${isFull ? `p-1` : `p-2`}
                     ${
                       subItem?.route === router?.asPath
@@ -59,17 +60,18 @@ const AdminDrawer = ({ isFull, setIsFull }: Props) => {
                         : `hover:bg-primary/10 duration-300 rounded-lg text-gray-500 `
                     }
                     `}
-                    >
-                      {isFull ? null : subItem?.route === router?.asPath ? (
-                        <span className=" absolute z-10 h-7 w-1 top-1.5 right-0.5 rounded-l bg-primary"></span>
-                      ) : null}
-                      {subItem?.icon}
+                      >
+                        {isFull ? null : subItem?.route === router?.asPath ? (
+                          <span className=" absolute z-10 h-7 w-1 top-1.5 right-0.5 rounded-l bg-primary"></span>
+                        ) : null}
+                        {subItem?.icon}
 
-                      {isFull ? null : <p className="  ">{subItem?.title}</p>}
-                    </div>
-                  ))}
-                </div>
-              </Collapse>
+                        {isFull ? null : <p className="  ">{subItem?.title}</p>}
+                      </div>
+                    ))}
+                  </div>
+                </Collapse>
+              </Fragment>
             ) : (
               <div
                 onClick={() => router?.push(item?.route)}
