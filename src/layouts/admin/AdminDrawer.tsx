@@ -12,12 +12,12 @@ const AdminDrawer = ({ isFull, setIsFull }: Props) => {
 
   return (
     <div
-      className={`h-screen lg:block hidden duration-500  bg-gradient-to-b  p-2  transition-all z-0 ease-out  ${
+      className={`h-screen  lg:block hidden duration-500  bg-gradient-to-b  p-2  transition-all z-0 ease-out  ${
         isFull ? "w-[6%]" : "w-[20%]"
       }`}
     >
       <div
-        className={`  shadow-[0px_0px_10px_2px_#e2e8f0]  w-full h-full flex items-center flex-col gap-2  py-1
+        className={`commonClass  shadow-[0px_0px_10px_2px_#e2e8f0]  w-full h-full flex items-center flex-col gap-2  py-1
       ${isFull ? `rounded-xl` : `rounded-2xl`}
       `}
       >

@@ -53,7 +53,7 @@ const Navbar = ({ isFull, setIsFull }: Props) => {
   }, []);
   return (
     <nav className=" sticky top-0  w-full h-fit flex items-center  justify-center pt-3 ">
-      <div className=" w-[98%]  flex items-center px-5  shadow-[0px_0px_10px_2px_#e2e8f0] rounded-md h-16">
+      <div className=" w-[98%] commonClass  flex items-center px-5  shadow-[0px_0px_10px_2px_#e2e8f0] rounded-md h-16">
         <div className=" w-full flex items-center justify-between">
           <div className=" flex items-center gap-4">
             <p

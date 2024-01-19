@@ -11,6 +11,7 @@ import { ImPaypal } from "react-icons/im";
 import PieChart from "@/components/charts/PieChart";
 import CircleChart from "@/components/charts/CircleChart";
 import BarChart from "@/components/charts/BarChart";
+import { useTheme } from "@/context/ThemeProvide";
 const YearData = [
   {
     title: "2019",
@@ -43,7 +44,7 @@ const YearData = [
 ];
 const Home = () => {
   const mainDivRef = useRef<HTMLDivElement | null>(null);
-
+  const { theme } = useTheme();
   const [yearOpen, setYearOpen] = useState(false);
   const [yearValue, setYearValue] = useState<string>("2019");
   useEffect(() => {
@@ -75,12 +76,12 @@ const Home = () => {
     <AdminLayout title="Admin Dashboard">
       <div className=" w-full h-full flex flex-col gap-5 py-3 ">
         <div className=" flex items-center justify-between gap-5">
-          <div className=" w-[67%]  rounded-lg shadow-[0px_0px_10px_1px_#e2e8f0] h-44 px-6 py-5 flex justify-between">
+          <div className=" w-[67%] commonClass  rounded-lg shadow-[0px_0px_10px_1px_#e2e8f0] h-44 px-6 py-5 flex justify-between">
             <div className=" flex flex-col justify-between w-[60%]">
               <p className=" font-medium text-primary font-serif text-lg">
                 Congratulations Rajesh! 🎉
               </p>
-              <p className=" font-medium text-sm text-gray-500">
+              <p className=" font-medium text-sm dark-text">
                 You have done 72% more sales today. Check your new badge in your
                 profile.
               </p>
@@ -97,7 +98,7 @@ const Home = () => {
             </div>
           </div>
           <div className=" flex items-center justify-between w-[33%] h-44 gap-5">
-            <div className=" w-full px-6 py-5 h-full  rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
+            <div className="commonClass w-full px-6 py-5 h-full  rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
               <p className=" absolute top-7 cursor-pointer right-5 text-gray-400">
                 <FaEllipsisVertical />
               </p>
@@ -117,7 +118,7 @@ const Home = () => {
                 <span> +72.80%</span>
               </p>
             </div>
-            <div className=" w-full px-6 py-5 h-full  rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
+            <div className="commonClass w-full px-6 py-5 h-full  rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
               <p className=" absolute top-7 cursor-pointer right-5 text-gray-400">
                 <FaEllipsisVertical />
               </p>
@@ -140,14 +141,18 @@ const Home = () => {
           </div>
         </div>
         <div className=" flex items-center justify-between gap-5">
-          <div className="w-[67%]  shadow-[0px_0px_10px_2px_#e2e8f0] h-96 rounded-lg  flex justify-between">
+          <div className="w-[67%] commonClass  shadow-[0px_0px_10px_2px_#e2e8f0] h-96 rounded-lg  flex justify-between">
             <div className="w-[65%] h-full  flex flex-col gap-2 px-2 pt-3">
               <p className=" font-medium tracking-wider text-gray-500 px-4 text-lg ">
                 Total Revenue
               </p>
               <BarChart />
             </div>
-            <div className="w-[35%] h-full border-l border-gray-300 flex items-center justify-center ">
+            <div
+              className={`w-[35%] h-full border-l ${
+                theme === "light" ? `border-gray-300` : `border-gray-700`
+              }  flex items-center justify-center `}
+            >
               <div className="w-full h-full p-4 flex flex-col justify-between items-center">
                 <div
                   onClick={() => setYearOpen(!yearOpen)}
@@ -186,7 +191,7 @@ const Home = () => {
           </div>
           <div className="w-[33%]  h-96 rounded-lg flex flex-col gap-5">
             <div className=" w-full h-full flex items-center justify-between gap-5">
-              <div className=" w-full px-6 py-5 h-full  rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
+              <div className="commonClass w-full px-6 py-5 h-full  rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
                 <p className=" absolute top-7 cursor-pointer right-5 text-gray-400">
                   <FaEllipsisVertical />
                 </p>
@@ -206,7 +211,7 @@ const Home = () => {
                   <span> -14.82%</span>
                 </p>
               </div>
-              <div className=" w-full px-6 py-5 h-full  rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
+              <div className="commonClass w-full px-6 py-5 h-full  rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
                 <p className=" absolute top-7 cursor-pointer right-5 text-gray-400">
                   <FaEllipsisVertical />
                 </p>
@@ -228,7 +233,7 @@ const Home = () => {
               </div>
             </div>
             <div className=" w-full h-full flex items-center justify-between gap-5">
-              <div className=" w-full px-6 py-5 h-full rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
+              <div className="commonClass w-full px-6 py-5 h-full rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
                 <p className=" absolute top-7 cursor-pointer right-5 text-gray-400">
                   <FaEllipsisVertical />
                 </p>
@@ -248,7 +253,7 @@ const Home = () => {
                   <span> -14.82%</span>
                 </p>
               </div>
-              <div className=" w-full px-6 py-5 h-full  rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
+              <div className="commonClass w-full px-6 py-5 h-full  rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
                 <p className=" absolute top-7 cursor-pointer right-5 text-gray-400">
                   <FaEllipsisVertical />
                 </p>
@@ -272,7 +277,7 @@ const Home = () => {
           </div>
         </div>
         <div className="  items-center  gap-5 w-full grid grid-cols-3 pb-5">
-          <div className="w-full h-[30rem]  rounded-lg shadow-[0px_0px_10px_1px_#e2e8f0] flex flex-col  px-5 py-2">
+          <div className="w-full h-[30rem] commonClass rounded-lg shadow-[0px_0px_10px_1px_#e2e8f0] flex flex-col  px-5 py-2">
             <div className="w-full h-[15%]  flex items-center justify-between">
               <p className=" flex flex-col ">
                 <span className="text-xl font-medium text-gray-600">
@@ -299,8 +304,8 @@ const Home = () => {
             </div>
             <div className="w-full h-[65%] border border-red-500"></div>
           </div>
-          <div className="w-full h-[30rem]  rounded-lg shadow-[0px_0px_10px_1px_#e2e8f0]"></div>
-          <div className="w-full h-[30rem]  rounded-lg shadow-[0px_0px_10px_1px_#e2e8f0]"></div>
+          <div className="w-full h-[30rem] commonClass rounded-lg shadow-[0px_0px_10px_1px_#e2e8f0]"></div>
+          <div className="w-full h-[30rem] commonClass rounded-lg shadow-[0px_0px_10px_1px_#e2e8f0]"></div>
         </div>
       </div>
     </AdminLayout>
