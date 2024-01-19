@@ -30,7 +30,7 @@ export default function AdminLayout({
         />
       </Head>
       <section className=" w-full  h-screen ">
-        <div className=" relative w-full h-full flex items-start  justify-between bg-[#f5f5f9]">
+        <div className=" relative w-full h-full flex items-start  justify-between ">
           <AdminDrawer isFull={isFull} setIsFull={setIsFull} />
           <div
             className={`h-full  duration-500 transition-all ease-out

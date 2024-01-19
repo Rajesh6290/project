@@ -1,7 +1,15 @@
-import React from "react";
+import { useTheme } from "@/context/ThemeProvide";
 
-const Home = () => {
-  return <div>Dashboard</div>;
-};
+function YourComponent() {
+  const { theme, toggleTheme } = useTheme();
 
-export default Home;
+  return (
+    <div>
+      <h1>Your Component{theme}</h1>
+      <button onClick={toggleTheme}>Toggle Theme</button>
+      {/* Your component content */}
+    </div>
+  );
+}
+
+export default YourComponent;

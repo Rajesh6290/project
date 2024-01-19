@@ -17,7 +17,7 @@ const AdminDrawer = ({ isFull, setIsFull }: Props) => {
       }`}
     >
       <div
-        className={` bg-white shadow-[0px_0px_10px_2px_#e2e8f0]  w-full h-full flex items-center flex-col gap-2  py-1
+        className={`  shadow-[0px_0px_10px_2px_#e2e8f0]  w-full h-full flex items-center flex-col gap-2  py-1
       ${isFull ? `rounded-xl` : `rounded-2xl`}
       `}
       >

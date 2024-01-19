@@ -3,6 +3,18 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.light-mode {
+  --bg-color: white;
+  --text-color: black;
+}
+
+/* Dark Mode */
+.dark-mode {
+  --bg-color: black;
+  --text-color: white;
+}
+
 * {
   box-sizing: border-box;
   scrollbar-width: thin;
@@ -24,6 +36,7 @@
   cursor: not-allowed;
 }
 
+
 a {
   /* color: inherit !important; */
   text-decoration: none !important;
@@ -33,8 +46,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: white;
-  color: black;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth !important;
 }
