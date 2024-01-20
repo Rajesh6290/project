@@ -17,7 +17,7 @@
   --bg-color: black;
   --text-color: white;
   /* --bg-common-color:#050D19; */
-  --common-shadow:0px 0px 10px 2px #1F1931;
+  --common-shadow:0px 0px 10px 0.5px #1F1931;
   --dark-text-color:#A9A9A9	
 }
 

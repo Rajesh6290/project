@@ -97,8 +97,8 @@ const Home = () => {
               />
             </div>
           </div>
-          <div className=" flex items-center justify-between w-[33%] h-44 gap-5">
-            <div className="commonClass w-full px-6 py-5 h-full  rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
+          <div className="  flex items-center justify-between w-[33%] h-44 gap-5">
+            <div className="commonClass w-full px-6 py-5 h-full  rounded-lg   flex flex-col justify-between ">
               <p className=" absolute top-7 cursor-pointer right-5 text-gray-400">
                 <FaEllipsisVertical />
               </p>
@@ -118,7 +118,7 @@ const Home = () => {
                 <span> +72.80%</span>
               </p>
             </div>
-            <div className="commonClass w-full px-6 py-5 h-full  rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
+            <div className="commonClass  w-full px-6 py-5 h-full  rounded-lg   flex flex-col justify-between ">
               <p className=" absolute top-7 cursor-pointer right-5 text-gray-400">
                 <FaEllipsisVertical />
               </p>
@@ -140,8 +140,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className=" flex items-center justify-between gap-5">
-          <div className="w-[67%] commonClass  shadow-[0px_0px_10px_2px_#e2e8f0] h-96 rounded-lg  flex justify-between">
+        <div className="  flex items-center justify-between gap-5">
+          <div className="w-[67%] commonClass   h-96 rounded-lg  flex justify-between">
             <div className="w-[65%] h-full  flex flex-col gap-2 px-2 pt-3">
               <p className=" font-medium tracking-wider text-gray-500 px-4 text-lg ">
                 Total Revenue
@@ -191,7 +191,7 @@ const Home = () => {
           </div>
           <div className="w-[33%]  h-96 rounded-lg flex flex-col gap-5">
             <div className=" w-full h-full flex items-center justify-between gap-5">
-              <div className="commonClass w-full px-6 py-5 h-full  rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
+              <div className="commonClass w-full px-6 py-5 h-full  rounded-lg   flex flex-col justify-between ">
                 <p className=" absolute top-7 cursor-pointer right-5 text-gray-400">
                   <FaEllipsisVertical />
                 </p>
@@ -211,7 +211,7 @@ const Home = () => {
                   <span> -14.82%</span>
                 </p>
               </div>
-              <div className="commonClass w-full px-6 py-5 h-full  rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
+              <div className="commonClass w-full px-6 py-5 h-full  rounded-lg   flex flex-col justify-between ">
                 <p className=" absolute top-7 cursor-pointer right-5 text-gray-400">
                   <FaEllipsisVertical />
                 </p>
@@ -233,7 +233,7 @@ const Home = () => {
               </div>
             </div>
             <div className=" w-full h-full flex items-center justify-between gap-5">
-              <div className="commonClass w-full px-6 py-5 h-full rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
+              <div className="commonClass w-full px-6 py-5 h-full rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between ">
                 <p className=" absolute top-7 cursor-pointer right-5 text-gray-400">
                   <FaEllipsisVertical />
                 </p>
@@ -253,7 +253,7 @@ const Home = () => {
                   <span> -14.82%</span>
                 </p>
               </div>
-              <div className="commonClass w-full px-6 py-5 h-full  rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between relative">
+              <div className="commonClass w-full px-6 py-5 h-full  rounded-lg shadow-[0px_0px_10px_2px_#e2e8f0]  flex flex-col justify-between ">
                 <p className=" absolute top-7 cursor-pointer right-5 text-gray-400">
                   <FaEllipsisVertical />
                 </p>
@@ -276,8 +276,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="  items-center  gap-5 w-full grid grid-cols-3 pb-5">
-          <div className="w-full h-[30rem] commonClass rounded-lg shadow-[0px_0px_10px_1px_#e2e8f0] flex flex-col  px-5 py-2">
+        <div className="   items-center  gap-5 w-full grid grid-cols-3 pb-5">
+          <div className="w-full h-[30rem] commonClass rounded-lg  flex flex-col  px-5 py-2">
             <div className="w-full h-[15%]  flex items-center justify-between">
               <p className=" flex flex-col ">
                 <span className="text-xl font-medium text-gray-600">
@@ -304,8 +304,8 @@ const Home = () => {
             </div>
             <div className="w-full h-[65%] border border-red-500"></div>
           </div>
-          <div className="w-full h-[30rem] commonClass rounded-lg shadow-[0px_0px_10px_1px_#e2e8f0]"></div>
-          <div className="w-full h-[30rem] commonClass rounded-lg shadow-[0px_0px_10px_1px_#e2e8f0]"></div>
+          <div className="w-full h-[30rem] commonClass rounded-lg "></div>
+          <div className="w-full h-[30rem] commonClass rounded-lg "></div>
         </div>
       </div>
     </AdminLayout>
