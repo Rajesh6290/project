@@ -1,13 +1,12 @@
-import Link from "next/link";
-import React from "react";
-import { BiLogoFacebook } from "react-icons/bi";
-import { FaGooglePlusG, FaInstagram } from "react-icons/fa6";
-import { Formik, Field, Form, ErrorMessage } from "formik";
-import * as Yup from "yup";
 import useAppContext from "@/context";
 import useAuth from "@/hooks/useAuth";
 import useMutation from "@/hooks/useMutation";
+import { Field, Form, Formik, FormikHelpers } from "formik";
+import Link from "next/link";
+import { BiLogoFacebook } from "react-icons/bi";
+import { FaGooglePlusG, FaInstagram } from "react-icons/fa6";
 import { toast } from "react-toastify";
+import * as Yup from "yup";
 const Login = () => {
   const { isLogin, setIsLogin } = useAppContext();
   const { getUser } = useAuth();
@@ -16,9 +15,13 @@ const Login = () => {
     emailOrUsername: Yup.string().required("This field is required"),
     password: Yup.string().required("This field is required"),
   });
-  const handleFormSubmit = async (values: any) => {
+  const handleFormSubmit = async (
+    values: any,
+    { resetForm }: FormikHelpers<any>
+  ) => {
+    console.log(values);
     try {
-      const res = await mutation(`users/login`, {
+      const res = await mutation(`user/login`, {
         method: "POST",
         body: {
           email: values?.emailOrUsername,
@@ -28,9 +31,15 @@ const Login = () => {
       });
       if (res?.status === 200) {
         toast.success("Login SuccessFully");
+        // resetForm();
+        return;
       }
+      toast.error(res?.results?.msg);
+
       console.log(res);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="w-full h-screen flex itm">
@@ -155,7 +164,7 @@ const Login = () => {
                   </button>
                   <p className=" w-full flex items-center justify-center gap-2">
                     <span className="text-sm text-gray-400">
-                      Don't have an account ?
+                      {`Don't have an account ?`}
                     </span>
                     <Link
                       href="/register"

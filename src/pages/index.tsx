@@ -1,14 +1,20 @@
+import Category from "@/components/home/Category";
+import HeroSection from "@/components/home/HeroSection";
+import MostPopular from "@/components/home/MostPoular";
+import SubCategory from "@/components/home/SubCategory";
 import { useTheme } from "@/context/ThemeProvide";
+import { PublicLayout } from "@/layouts";
 
 function YourComponent() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div>
-      <h1>Your Component{theme}</h1>
-      <button onClick={toggleTheme}>Toggle Theme</button>
-      {/* Your component content */}
-    </div>
+    <PublicLayout>
+      <HeroSection />
+      <MostPopular />
+      <SubCategory />
+      <Category />
+    </PublicLayout>
   );
 }
 
