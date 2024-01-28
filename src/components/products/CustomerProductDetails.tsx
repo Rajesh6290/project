@@ -56,10 +56,6 @@ const CustomerProductDetails = () => {
   const { id } = router.query;
   // const [variantID, setVariantID] = useState(router?.query?.variantId);
 
-  const handleChangeVariantId = (id: string) => {
-    router?.push(`${router?.query?.id}?variantId=${id}`);
-    const [inputItem, setInputItem] = useState(false);
-  };
   //   const allColors = parentProduct?.variants?.map((i: any) => i?.color);
   // const allColors = ["red", "green", "red", "yellow", "green"];
   //   const uniqueColors = [...(new Set(allColors) as any)];
@@ -182,6 +178,7 @@ const CustomerProductDetails = () => {
                 <div className="w-full grid grid-cols-5 gap-3 justify-center">
                   {IMAGE_ARR?.map((item, index) => (
                     <article
+                      key={index}
                       onClick={() => handleActiveImage(index)}
                       className="mx-auto !flex items-center px-2 pb-4 w-full  "
                     >
