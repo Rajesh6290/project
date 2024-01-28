@@ -32,43 +32,55 @@ const SideMenu = () => {
   const CATEGORY_ARR = [
     {
       id: 1,
-      title: "New Product",
+      title: "Sculptures",
     },
     {
       id: 2,
-      title: "Virtual",
+      title: "Pottery",
     },
     {
       id: 3,
-      title: "Home Care",
+      title: "Masks",
     },
     {
       id: 4,
-      title: "Personal care",
+      title: "Pen Holders",
     },
     {
       id: 5,
-      title: "Garments",
+      title: "Cookware",
     },
     {
       id: 6,
-      title: "Mobile Accessories",
+      title: "Lamps",
     },
     {
       id: 7,
-      title: "Electronics",
+      title: "Home Decor",
     },
     {
       id: 8,
-      title: "Natural Products",
+      title: "Water Bottles",
     },
     {
       id: 9,
-      title: "Beauty",
+      title: "Garden Decor",
     },
     {
       id: 8,
-      title: "jewellery",
+      title: "Diya",
+    },
+    {
+      id: 8,
+      title: "Animal Figures",
+    },
+    {
+      id: 8,
+      title: "Glass and Clay Fusion",
+    },
+    {
+      id: 8,
+      title: "God Models",
     },
   ];
 
@@ -112,11 +124,11 @@ const SideMenu = () => {
               </span>
               <span className=" h-[0.1rem] w-20 bg-primary rounded-full"></span>
             </p>
-            {data?.data?.data?.map((item: any, index: number) => {
+            {CATEGORY_ARR.map((item: any, index: number) => {
               return (
                 <>
                   <p
-                    key={item?.id}
+                    key={index}
                     className={`w-full flex gap-3 items-center cursor-pointer hover:pl-6 px-4 border-b group  common-transition ${
                       selectedCategory === index
                         ? "bg-primary"
@@ -136,7 +148,7 @@ const SideMenu = () => {
           ${selectedCategory === index ? "text-white" : "text-gray-800"}
           `}
                     >
-                      {item?.name}
+                      {item?.title}
                     </span>
                   </p>
                 </>

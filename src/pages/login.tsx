@@ -42,15 +42,15 @@ const Login = () => {
     }
   };
   return (
-    <div className="w-full h-screen flex itm">
-      <div className="w-[68%] bg-slate-100 h-full p-10">
+    <div className="w-full h-screen flex lg:flex-row flex-col-reverse overflow-y-auto lg:py-0 py-5 lg:gap-0 gap-5">
+      <div className="w-[68%] lg:block hidden bg-slate-100 h-full p-10">
         <img
           src="/register/login.png"
           className="w-full h-full object-contain"
           alt=""
         />
       </div>
-      <div className="w-[32%]  h-full  ">
+      <div className="lg:w-[32%] w-full  h-full  ">
         <div className="w-full h-full flex  justify-center px-10 flex-col  gap-10">
           <img
             src="/logo.png"

@@ -152,3 +152,6 @@ color: var(--dark-text-color);
     transform: rotate(0deg);
   }
 }
+.scroll::-webkit-scrollbar{
+  display: hidden;
+}

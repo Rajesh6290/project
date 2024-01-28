@@ -2,6 +2,7 @@ import Link from "next/link";
 import { AiFillEye, AiFillHeart } from "react-icons/ai";
 import { FaStar } from "react-icons/fa";
 import { HiOutlinePlusSm } from "react-icons/hi";
+import { MdOutlineShoppingCart } from "react-icons/md";
 
 interface IProduct {
   id: string;
@@ -15,13 +16,17 @@ const ProductCard = ({ item }: { item: IProduct }) => {
       className="relative h-full group overflow-hidden  w-full flex flex-col gap-2 justify-between items-center  bg-white shadow-[0px_0px_4px_0px_#00000024] rounded-lg p-4"
       key={item?.id}
     >
+      <p className=" absolute z-10 top-2 left-2 text-xs bg-orange-500/50 text-white font-medium px-4 py-1 rounded-md">
+        10% off
+      </p>
       <Link href="/wishlist">
-        <p className=" absolute z-10 top-2 sm:group-hover:right-2 right-2 sm:-right-10 duration-300 w-8 h-8 cursor-pointer  rounded-lg flex items-center justify-center bg-primary/60 bg-opacity-60">
+        <p className=" absolute z-10 top-2  group-hover:right-2 -right-14  duration-200 w-8 h-8 cursor-pointer  rounded-lg flex items-center justify-center bg-orange-500/50 bg-opacity-60">
           <AiFillHeart className=" hover:scale-125 duration-200 text-white" />
         </p>
       </Link>
-      <Link href="/wishlist">
-        <p className=" absolute z-10 top-12 sm:group-hover:right-2 right-2 sm:-right-20 duration-300 w-8 h-8 cursor-pointer  rounded-lg flex items-center justify-center bg-primary/60 bg-opacity-60">
+
+      <Link href="#">
+        <p className=" absolute z-10 top-12  group-hover:right-2 -right-16  duration-300 w-8 h-8 cursor-pointer  rounded-lg flex items-center justify-center bg-orange-500/50 bg-opacity-60">
           <AiFillEye className=" hover:scale-125 duration-200 text-white" />
         </p>
       </Link>
@@ -35,21 +40,19 @@ const ProductCard = ({ item }: { item: IProduct }) => {
           />
         </Link>
         <div className=" flex w-full flex-col gap-2">
-          {/* <div className=" flex items-center justify-between">
-            <p className=" flex items-center gap-1.5 py-1 px-2 rounded-full border border-gray-300">
-              <FaStar className=" text-xs text-amber-500" />
-              <span className=" text-xs">5.0</span>
+          <div className=" flex md:flex-row flex-col md:items-center items-start justify-between">
+            <p className=" flex items-center  gap-1">
+              <span className=" uppercase text-primary/80 font-medium text-sm">
+                brand:
+              </span>
+              <span className=" text-xs capitalize text-gray-600">
+                Alive Core
+              </span>
             </p>
-            <p className="  text-green-500 text-xs font-semibold">Instock</p>
-          </div> */}
-          <p className=" flex items-center gap-1">
-            <span className=" uppercase text-primary/80 font-medium text-sm">
-              brand:
-            </span>
-            <span className=" text-xs capitalize text-gray-600">
-              Alive Core
-            </span>
-          </p>
+            <p className=" text-xs font-medium px-4 py-1 bg-green-500/50 text-white rounded-md">
+              Instoke
+            </p>
+          </div>
           <p className="  md:font-semibold font-medium md:text-base text-sm  text-gray-700">
             {item?.name}
           </p>
@@ -68,8 +71,8 @@ const ProductCard = ({ item }: { item: IProduct }) => {
               </span>
             </p>
             <Link href="/cart">
-              <p className=" w-8 h-8 rounded-md cursor-pointer  hover:bg-primary border duration-300 border-primary flex items-center justify-center">
-                <HiOutlinePlusSm className=" text-primary hover:text-white text-xl duration-300" />
+              <p className=" w-10 h-10 rounded-md cursor-pointer  hover:bg-primary border duration-300 border-primary flex items-center justify-center">
+                <MdOutlineShoppingCart className=" text-primary hover:text-white text-xl " />
               </p>
             </Link>
           </div>

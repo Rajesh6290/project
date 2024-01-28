@@ -4,7 +4,7 @@ import React from "react";
 
 const Products = () => {
   return (
-    <PublicLayout title="Products | PrintBrix">
+    <PublicLayout title="Products | Terracotta Craft">
       <section className="bg-slate-100">
         <div className="main-container py-10 w-full flex flex-col gap-5">
           <article className="flex justify-between items-center p-3 bg-white shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] rounded-lg font-semibold">

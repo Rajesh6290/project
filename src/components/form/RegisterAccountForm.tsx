@@ -43,14 +43,14 @@ const RegisterForm = ({ setStoreData, selectForm, setSelectForm }: any) => {
       onSubmit={onSubmit}
     >
       {({ touched, errors }) => (
-        <Form className="flex flex-col gap-8 w-[70%]">
+        <Form className="flex flex-col gap-8 lg:w-[70%] w-[90%] lg:py-0 py-5">
           <p className="flex flex-col gap-1">
             <span className="text-2xl text-gray-500 font-medium ">
               Account Information
             </span>
             <span className="text-gray-400">Enter Your Account Details</span>
           </p>
-          <div className="flex items-center gap-5 w-full">
+          <div className="flex items-center lg:flex-row flex-col gap-5 w-full">
             <div className="flex flex-col gap-2 w-full">
               <p className="text-gray-500 uppercase text-sm font-medium">
                 Name
@@ -93,7 +93,7 @@ const RegisterForm = ({ setStoreData, selectForm, setSelectForm }: any) => {
             </div>
           </div>
 
-          <div className="flex items-center gap-5 w-full">
+          <div className="flex items-center gap-5 lg:flex-row flex-col w-full">
             <div className="flex flex-col gap-2 w-full relative">
               <p
                 onClick={() => setShowPassword(!showPassword)}

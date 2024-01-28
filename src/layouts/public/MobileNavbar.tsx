@@ -1,18 +1,17 @@
+import MenuCollapse from "@/components/common/MenuCollapse";
+import { Collapse, Drawer } from "@mui/material";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { AiOutlineUser } from "react-icons/ai";
-import { BiSearch, BiSearchAlt2 } from "react-icons/bi";
+import { BiSearch } from "react-icons/bi";
 import { BsFillHandbagFill } from "react-icons/bs";
 import { FaHome, FaSignInAlt, FaUserTie } from "react-icons/fa";
 import { HiMenuAlt1, HiOutlineShoppingCart } from "react-icons/hi";
 import { MdClose, MdContacts } from "react-icons/md";
+import { PiUserFill } from "react-icons/pi";
 import { RiMenu3Fill } from "react-icons/ri";
 import { TbLogout2, TbSitemap } from "react-icons/tb";
-import { PiUserFill, PiUserSwitchFill } from "react-icons/pi";
-import { useRouter } from "next/router";
-import { Collapse, Dialog, Drawer } from "@mui/material";
-import MenuCollapse from "@/components/common/MenuCollapse";
-import { FaX } from "react-icons/fa6";
 export const MENU_ARR = [
   {
     id: "1",
@@ -136,53 +135,85 @@ export const MENU_ARR = [
 ];
 const MobileNavbar = () => {
   const [open, setOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(true);
+  const [searchOpen, setSearchOpen] = useState(false);
   const [searchText, setSearchText] = useState("");
   const router = useRouter();
 
   return (
-    <section className="block xl:hidden main-container py-4  bg-gradient-to-bl from-rose-400 to-orange-600 text-white">
-      <div className="flex justify-between items-center">
-        <div className=" flex gap-5 items-center">
-          <p
-            onClick={() => setOpen(true)}
-            className=" w-10 h-10 rounded-lg bg-white text-orange-500 cursor-pointer p-1 flex items-center justify-center"
-          >
-            <HiMenuAlt1 className=" text-2xl" />
-          </p>
-          <Link href="/" className="">
-            <img
-              src="/logo1.png"
-              alt="TerracottaCraft"
-              className="w-fit h-10 md:w-40"
-            />
-          </Link>
-        </div>
-        <div className=" flex items-center gap-3">
-          <p
-            className=" w-10 h-10 rounded-lg  duration-300 bg-white cursor-pointer p-1 flex items-center justify-center"
-            onClick={() => setSearchOpen(!searchOpen)}
-          >
-            <BiSearch className=" text-2xl  text-orange-500/50 cursor-pointer" />
-          </p>
+    <>
+      <section className="block xl:hidden main-container py-4  bg-gradient-to-bl from-rose-400 to-orange-600 text-white">
+        <div className="flex justify-between items-center">
+          <div className=" flex gap-5 items-center">
+            <p
+              onClick={() => setOpen(true)}
+              className=" w-10 h-10 rounded-lg bg-white text-orange-500 cursor-pointer p-1 flex items-center justify-center"
+            >
+              <HiMenuAlt1 className=" text-2xl" />
+            </p>
+            <Link href="/" className="">
+              <img
+                src="/logo1.png"
+                alt="TerracottaCraft"
+                className="w-fit h-10 md:w-40"
+              />
+            </Link>
+          </div>
+          <div className=" flex items-center gap-3">
+            <p
+              className=" w-10 h-10 rounded-lg  duration-300 bg-white cursor-pointer p-1 flex items-center justify-center"
+              onClick={() => setSearchOpen(!searchOpen)}
+            >
+              <BiSearch className=" text-2xl  text-orange-500/50 cursor-pointer" />
+            </p>
 
-          <Link href="/cart">
-            <p className=" relative w-10 h-10 rounded-lg  duration-300 bg-white cursor-pointer p-1 flex items-center justify-center">
-              <span className=" absolute -top-3 -right-2 bg-red-500 w-5 h-5 rounded-full flex items-center justify-center text-white font-medium text-xs">
-                0
-              </span>
-              <HiOutlineShoppingCart className=" text-2xl  text-orange-500/50 cursor-pointer" />
-            </p>
-          </Link>
-          <Link href="/login">
-            <p className=" w-10 h-10 rounded-lg duration-300 bg-white cursor-pointer p-1 flex items-center justify-center">
-              <AiOutlineUser className="  text-2xl  text-orange-500/50 cursor-pointer" />
-            </p>
-          </Link>
+            <Link href="/cart">
+              <p className=" relative w-10 h-10 rounded-lg  duration-300 bg-white cursor-pointer p-1 flex items-center justify-center">
+                <span className=" absolute -top-3 -right-2 bg-red-500 w-5 h-5 rounded-full flex items-center justify-center text-white font-medium text-xs">
+                  0
+                </span>
+                <HiOutlineShoppingCart className=" text-2xl  text-orange-500/50 cursor-pointer" />
+              </p>
+            </Link>
+            <Link href="/login">
+              <p className=" w-10 h-10 rounded-lg duration-300 bg-white cursor-pointer p-1 flex items-center justify-center">
+                <AiOutlineUser className="  text-2xl  text-orange-500/50 cursor-pointer" />
+              </p>
+            </Link>
+          </div>
         </div>
-      </div>
+
+        {searchOpen && (
+          <div className="fixed inset-0 flex justify-center z-[9999] bg-black bg-opacity-80  ">
+            <div className="p-4 rounded-md w-full flex flex-col gap-5">
+              <div
+                className="bg-white  items-center justify-between w-full flex rounded-2xl pl-3 shadow-lg p-2 "
+                style={{ top: 5 }}
+              >
+                <input
+                  autoFocus
+                  className="font-semibold tracking-wider  rounded-full w-full py-4 pl-6 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline lg:text-sm text-xs"
+                  type="text"
+                  placeholder="Navigates to page"
+                  onChange={(e) => setSearchText(e.target.value)}
+                />
+
+                <div
+                  onClick={() => setSearchOpen(false)}
+                  className="bg-gray-600 p-2 hover:bg-theme duration-300 cursor-pointer mx-2 rounded-full"
+                >
+                  <MdClose className=" text-xl text-white" />
+                </div>
+              </div>
+
+              <Collapse in={searchText?.length > 0}>
+                <div className=" rounded-2xl w-full h-[20rem] bg-white flex items-center flex-col justify-center"></div>
+              </Collapse>
+            </div>
+          </div>
+        )}
+      </section>
       <Drawer open={open} onClose={() => setOpen(false)} anchor={"left"}>
-        <div className=" w-full  h-screen flex flex-col z-[99999]">
+        <div className="w-full h-full flex flex-col justify-between">
           <div className=" w-full h-[10%] justify-between items-center flex bg-gradient-to-bl from-rose-400 to-orange-600 p-4 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]">
             <img
               src="/logo1.png"
@@ -260,37 +291,7 @@ const MobileNavbar = () => {
           </div>
         </div>
       </Drawer>
-
-      {searchOpen && (
-        <div className="fixed inset-0 flex justify-center z-[9999] bg-black bg-opacity-80  ">
-          <div className="p-4 rounded-md w-full flex flex-col gap-5">
-            <div
-              className="bg-white  items-center justify-between w-full flex rounded-2xl pl-3 shadow-lg p-2 "
-              style={{ top: 5 }}
-            >
-              <input
-                autoFocus
-                className="font-semibold tracking-wider  rounded-full w-full py-4 pl-6 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline lg:text-sm text-xs"
-                type="text"
-                placeholder="Navigates to page"
-                onChange={(e) => setSearchText(e.target.value)}
-              />
-
-              <div
-                onClick={() => setSearchOpen(false)}
-                className="bg-gray-600 p-2 hover:bg-theme duration-300 cursor-pointer mx-2 rounded-full"
-              >
-                <MdClose className=" text-xl text-white" />
-              </div>
-            </div>
-
-            <Collapse in={searchText?.length > 0}>
-              <div className=" rounded-2xl w-full h-[20rem] bg-white flex items-center flex-col justify-center"></div>
-            </Collapse>
-          </div>
-        </div>
-      )}
-    </section>
+    </>
   );
 };
 
