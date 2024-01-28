@@ -12,12 +12,15 @@ const PublicLayout = ({
   children = <></>,
   title = "Terracotta Craft",
   description,
-  ogImage,
+  ogImage = "/logo.png",
 }: Props) => {
   return (
     <>
       <Head>
-        <meta property="og:url" content="" />
+        <meta
+          property="og:url"
+          content="https://e-commerce-theta-six.vercel.app/"
+        />
         <meta property="og:type" content="website" />
         <title>{title}</title>
         <meta name="description" content={description} />
