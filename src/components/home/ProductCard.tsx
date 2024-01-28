@@ -50,7 +50,9 @@ const ProductCard = ({ item }: { item: IProduct }) => {
               Alive Core
             </span>
           </p>
-          <p className="  font-semibold  text-gray-700">{item?.name}</p>
+          <p className="  md:font-semibold font-medium md:text-base text-sm  text-gray-700">
+            {item?.name}
+          </p>
           <p className="text-sm flex items-center gap-1">
             <FaStar className=" text-amber-500" />
             <FaStar className=" text-amber-500" />

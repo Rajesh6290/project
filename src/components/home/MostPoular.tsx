@@ -76,7 +76,7 @@ const MostPopular = () => {
           </div>
           <p className="h-1 w-48 bg-primary rounded-full"></p>
         </article>
-        <div className=" w-full h-full grid 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1  gap-5 ">
+        <div className=" w-full h-full grid 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2  gap-5 ">
           {PRODUCT_ARR.slice(0, 10).map((curEle: IProduct) => (
             <ProductCard item={curEle} key={curEle.id} />
           ))}

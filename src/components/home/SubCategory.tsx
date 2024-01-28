@@ -40,13 +40,13 @@ const SubCategory = () => {
           </div>
           <p className="h-1 w-48 bg-primary rounded-full"></p>
         </article>
-        <div className="w-full h-full grid grid-cols-4 gap-5">
+        <div className="w-full h-full grid md:grid-cols-4 grid-cols-2 gap-5">
           {SubCategoryArr?.map((item, i) => (
             <div
               key={i}
               className="flex flex-col gap-5 w-full h-full  items-center"
             >
-              <div className="w-full group h-[30rem] overflow-hidden  rounded-lg relative">
+              <div className="w-full group md:h-[30rem] h-[10rem] overflow-hidden  rounded-lg relative">
                 <div className=" uppercase  absolute top-0 left-0 w-full h-full cursor-pointer flex items-center justify-center group-hover:bg-black/70 duration-500">
                   <p className="text-white font-medium group-hover:block hidden">
                     {item?.value} Products

@@ -46,7 +46,7 @@ const HeroSection = () => {
     navigationRef?.current?.slickNext();
   };
   return (
-    <section className=" w-full lg:h-[90vh] h-[30vh] overflow-hidden relative">
+    <section className=" w-full lg:h-[90vh] h-[50vh] overflow-hidden relative">
       <p
         onClick={handlePrev}
         className=" absolute z-[222] top-1/2 -translate-y-1/2 -left-5 w-14 md:h-20 h-16  rounded-lg bg-slate-100 bg-opacity-40 hover:bg-opacity-100 duration-300 cursor-pointer text-black/20 hover:text-black/60 flex items-center justify-center pl-5"
@@ -59,15 +59,15 @@ const HeroSection = () => {
       >
         <MdArrowForwardIos />
       </p>
-      <div className=" absolute w-full h-full flex items-center px-20  z-[1]">
-        <div className="flex flex-col gap-7">
-          <p className=" uppercase text-7xl  font-bold text-white tracking-wide">
+      <div className=" absolute w-full h-full flex items-center md:px-20 px-10  z-[1]">
+        <div className="flex flex-col md:gap-7 gap-3">
+          <p className=" uppercase md:text-7xl text-lg font-bold text-white tracking-wide">
             Welcom to,
           </p>
-          <p className=" uppercase text-7xl  font-bold text-white tracking-wide">
+          <p className=" uppercase md:text-7xl text-lg font-bold text-white tracking-wide">
             Terracotta Craft
           </p>
-          <p className="  text-justify text-xl  font-medium w-[40%] text-white tracking-wide">
+          <p className="  text-justify md:text-xl text-xs  font-medium md:w-[40%] w-full text-white tracking-wide">
             {` "We are a leading manufacturer and exporter of clay and ceramic
             products based in Balasore, Odisha, India (756042). Our diverse
             range includes health-conscious clay cookware, crafted without any
@@ -85,7 +85,7 @@ const HeroSection = () => {
             <img
               key={item?.id}
               src={item?.image}
-              className="lg:h-[90vh] h-[30vh] w-full object-fill "
+              className="lg:h-[90vh] h-[50vh] w-full object-fill "
               alt=""
             />
           ))}

@@ -25,8 +25,8 @@ const MenuCollapse: React.FC<AccordionProps> = ({ title, children, icon }) => {
           className={`w-full p-5 common-transition  capitalize font-semibold tracking-wide flex items-center justify-between
         ${
           isOpen
-            ? " bg-primary/20 bg-opacity-70 text-gray-700 rounded-t-xl"
-            : "text-gray-600 rounded-xl  bg-white shadow-[0px_0px_6px_0px_#00000024] hover:bg-primary/20 "
+            ? " bg-primary/6  0 bg-opacity-70 text-gray-700 rounded-t-xl"
+            : "text-gray-600 rounded-xl  bg-white shadow-[0px_0px_6px_0px_#00000024] hover:bg-orange-500/10 "
         }
         `}
         >
@@ -48,7 +48,7 @@ const MenuCollapse: React.FC<AccordionProps> = ({ title, children, icon }) => {
         >
           <div className="overflow-hidden description text-sm md:text-base">
             <Link href="">
-              <div className="group hover:text-primary flex items-center gap-1  p-4 hover:bg-primary/5  text-sm common-transition border border-t-0 rounded-b-xl  ">
+              <div className="group hover:text-primary flex items-center gap-1  p-4 hover:bg-orange-500/5  text-sm common-transition border border-t-0 rounded-b-xl  ">
                 {children}
               </div>
             </Link>
